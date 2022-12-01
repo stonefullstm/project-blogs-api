@@ -2,14 +2,12 @@ const express = require('express');
 const loginRouter = require('./login.router');
 const userRouter = require('./user.router');
 
-const validateUser = require('../middlewares/validateUser');
-
 const routers = express.Router();
 routers.use('/login', loginRouter);
-routers.use('/user', validateUser, userRouter);
+routers.use('/user', userRouter);
 
-// routers.use(authMiddleware.validateToken);
-// routers.use('/courses', courseRouter);
+// routers.use(validateToken);
+// routers.use('/user', validateToken, validateUser, userRouter);
 
 // routers.use('/students', studentRouter);
 // routers.use('/modules', moduleRouter);
