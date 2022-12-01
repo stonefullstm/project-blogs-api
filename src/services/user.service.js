@@ -1,5 +1,3 @@
-// const jwtUtil = require('../utils/jwt.util');
-
 const { User } = require('../models');
 
 const createUser = async ({ displayName, email, password, image }) => {
@@ -19,25 +17,22 @@ const findOneByEmail = async ({ email }) => {
   return user;
 };
 
+const findByPk = async (id) => {
+  const user = await User.findByPk(id, {
+    attributes: { exclude: ['password'] },
+  });
+  return user;
+};
+
 const validateLogin = async ({ email, password }) => {
   const user = await User.findOne({ where: { email, password } });
   return user;
 };
 
-// const validateToken = (token) => {
-//   if (!token) {
-//     const e = new Error('Token not found');
-//     throw e;
-//   }
-
-//   const user = jwtUtil.validateToken(token);
-//   return user;
-// };
-
 module.exports = {
   validateLogin,
-  // validateToken,
   createUser,
   findOneByEmail,
   getAll,
+  findByPk,
 };
