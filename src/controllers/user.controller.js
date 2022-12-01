@@ -15,6 +15,17 @@ const login = async (req, res) => {
   res.status(200).json({ token });
 };
 
+const createUser = async (req, res) => {
+  const { email } = req.body;
+  let user = await userService.findOneByEmail({ email });
+  if (user) return res.status(409).json({ message: 'User already registered' });
+  user = await userService.createUser(req.body);
+  const { password: _, ...userWithoutPassword } = user.dataValues;
+  const token = jwtUtil.createToken(userWithoutPassword);
+  res.status(201).json({ token });
+};
+
 module.exports = {
   login,
+  createUser,
 };
