@@ -7,5 +7,6 @@ const { existCategory } = require('../middlewares/existCategory');
 const router = express.Router();
 
 router.post('/', validateToken, validateBlogPost, existCategory, blogPostController.createBlogPost);
+router.get('/', validateToken, blogPostController.getAll);
 
 module.exports = router;
