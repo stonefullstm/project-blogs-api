@@ -22,6 +22,15 @@ const createBlogPost = async (
   return result;
 };
 
+const updateBlogPost = async (id, { title, content }) => {
+  const [qtdUpdated] = await BlogPost.update(
+    { title, content },
+    { where: { id } },
+  );
+
+  return qtdUpdated > 0;
+};
+
 const getAll = async () => BlogPost.findAll({
   include: [
     { model: User, as: 'user', attributes: { exclude: ['password'] } },
@@ -38,6 +47,7 @@ const findByPk = (id) => BlogPost.findByPk(id, {
 
 module.exports = {
   createBlogPost,
+  updateBlogPost,
   getAll,
   findByPk,
 };
