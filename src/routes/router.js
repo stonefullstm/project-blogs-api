@@ -10,10 +10,4 @@ routers.use('/user', userRouter);
 routers.use('/categories', categoryRouter);
 routers.use('/post', blogPostRouter);
 
-// routers.use(validateToken);
-// routers.use('/user', validateToken, validateUser, userRouter);
-
-// routers.use('/students', studentRouter);
-// routers.use('/modules', moduleRouter);
-
 module.exports = routers;
