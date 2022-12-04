@@ -29,7 +29,15 @@ const getAll = async () => BlogPost.findAll({
   ],
 });
 
+const findByPk = (id) => BlogPost.findByPk(id, {
+  include: [
+      { model: User, as: 'user', attributes: { exclude: ['password'] } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+});
+
 module.exports = {
   createBlogPost,
   getAll,
+  findByPk,
 };
