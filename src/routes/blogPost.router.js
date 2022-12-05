@@ -11,5 +11,6 @@ router.post('/', validateToken, validateBlogPost, existCategory, blogPostControl
 router.get('/', validateToken, blogPostController.getAll);
 router.get('/:id', validateToken, blogPostController.getById);
 router.put('/:id', validateToken, validateUpdatePost, blogPostController.updateBlogPost);
+router.delete('/:id', validateToken, blogPostController.deleteBlogPost);
 
 module.exports = router;

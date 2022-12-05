@@ -45,9 +45,16 @@ const findByPk = (id) => BlogPost.findByPk(id, {
     ],
 });
 
+const deleteBlogPost = async (id) => {
+  await BlogPost.destroy({
+    where: { id },
+  });
+};
+
 module.exports = {
   createBlogPost,
   updateBlogPost,
+  deleteBlogPost,
   getAll,
   findByPk,
 };
