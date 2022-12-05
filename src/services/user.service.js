@@ -29,10 +29,17 @@ const validateLogin = async ({ email, password }) => {
   return user;
 };
 
+const deleteUser = async (id) => {
+  await User.destroy({
+    where: { id },
+  });
+};
+
 module.exports = {
   validateLogin,
   createUser,
   findOneByEmail,
   getAll,
   findByPk,
+  deleteUser,
 };
