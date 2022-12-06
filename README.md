@@ -11,8 +11,19 @@ Além do CRUD para as principais tabelas (usuários, categorias e posts), a apli
 ## Instalação/Execução
 <details>
   <summary><strong>Como instalar</strong></summary>
-  - Clonar o respositório
-  - Entrar no repositório
-  - Rodar os serviços node e db (docker)
+ Clonar o respositório
+`git clone git@github.com:stonefullstm/project-blogs-api.git`
+Entrar no repositório
+`cd project-blogs-api`
+Rodar os serviços `node` e `db` (docker)
+`docker-compose up -d`
+Acessar o terminal interativo do serviço `node`
+`docker exec -it blogs_api bash`
+Instalar as dependências
+`npm install`
+<summary><strong>Como executar</strong></summary>
+`npm start`
+Utilizar [Thunder client](https://www.thunderclient.com/ "Thunder client") ou extensão similar no [Visual Studio](https://code.visualstudio.com/ "Visual Studio") para acessar os endpoints da API
   <br />
 </details>
+
