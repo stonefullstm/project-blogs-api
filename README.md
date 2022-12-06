@@ -1,13 +1,18 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Projeto API de Blogs
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Aqui você encontrará os detalhes sobre o projeto: como instalar, executar, funcionalidades, recursos e tecnologias utilizadas.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Introdução
+
+O **API de Blogs** consiste da criação de um banco de dados e CRUD (Create, Read, Update, Delete) para postagens de um blog. A API segue os princípios de REST (Representational State Transfer).
+
+Além do CRUD para as principais tabelas (usuários, categorias e posts), a aplicação oferece queries para buscas nessas mesmas tabelas. A fim de ter acesso às funcionalidades da API, um token é gerado no momento do registro de uma nova pessoa usuária, ou do login.
+
+## Instalação/Execução
+<details>
+  <summary><strong>Como instalar</strong></summary>
+  - Clonar o respositório
+  - Entrar no repositório
+  - Rodar os serviços node e db (docker)
+  <br />
+</details>
